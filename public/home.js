@@ -1,51 +1,21 @@
-let activePage = {
-    "home-link": true,
-    "dex-link": false
-}
-let displayPage = {
-    "home-link": () => {
+const pages = ['home','dex']
+const main = document.querySelector('section')
 
-    },
-    "dex-link": () => {
-
-    }
-}
-
-const links = document.querySelectorAll('.sidebar-links')
-
-const toggleActive = evt => {
-    for(let page in activePage){
-        if(evt){
-            let { target } = evt
-            while(!target.classList.contains('sidebar-links')){
-                target = target.parentNode
-            }
-            if(target.classList.contains(page)){
-                activePage[page] = true
-            } else {
-                activePage[page] = false
-            }
-        }
-
-        if(activePage[page]){
-            let toggler = document.querySelector(`.sidebar-links.${page}`).children
-            for(let i = 0; i < toggler.length; i++){
-                toggler[i].classList.toggle('active')
-            }
-            displayPage[page]()
+const displayHome = () => {
+    pages.forEach(page => {
+        if(page === "home"){
+            main.classList.add(page)
         } else {
-            let toggler = document.querySelector(`.sidebar-links.${page}`).children
-            for(let i = 0; i < toggler.length; i++){
-                if(toggler[i].classList.contains('active')){
-                    toggler[i].classList.toggle('active')
-                }
-            }
+            main.classList.remove(page)
         }
-    }
-}
+    })
 
-console.log(links)
-for(let i = 0; i < links.length; i++){
-    links[i].addEventListener('click', toggleActive)
+    main.innerHTML = `
+        <div class='home-title-box'>
+            <h1 class='home-title'>Welcome to the team building Pokedex app!</h1>
+        </div>
+        <div class='video'>
+            <iframe class='poke-intro' src='https://www.youtube.com/embed/rg6CiPI6h2g' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    `
 }
-toggleActive()

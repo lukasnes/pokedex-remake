@@ -8,11 +8,13 @@ const { PORT } = process.env
 const { 
     getHTML,
     getCSS,
-    getJS,
-    getReset
+    getSidebar,
+    getReset,
+    getHome,
+    getDex
 } = require('./fileController')
 const {
-    getDex
+    getPokedex
 } = require('./controller')
 
 app.use(express.json())
@@ -22,7 +24,11 @@ app.use(express.static('public'))
 app.get('/',getHTML)
 app.get('/reset',getReset)
 app.get('/css',getCSS)
-app.get('/js',getJS)
+app.get('/sidebar',getSidebar)
+app.get('/home',getHome)
+app.get('/dex',getDex)
+
+app.get('/pokedex',getPokedex)
 
 
 

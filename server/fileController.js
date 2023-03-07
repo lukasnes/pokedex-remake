@@ -7,10 +7,16 @@ module.exports = {
     getCSS: (req,res) => {
         res.status(200).sendFile(path.join(__dirname, '../public/styles.css'))
     },
-    getJS: (req,res) => {
-        res.status(200).sendFile(path.join(__dirname, '../public/home.js'))
+    getSidebar: (req,res) => {
+        res.status(200).sendFile(path.join(__dirname, '../public/sidebar.js'))
     },
     getReset: (req,res) => {
         res.status(200).sendFile(path.join(__dirname, '../public/reset.css'))
+    },
+    getHome: (req,res) => {
+        res.status(200).sendFile(path.join(__dirname, '../public/home.js'))
+    },
+    getDex: (req,res) => {
+        res.status(200).sendFile(path.join(__dirname, '../public/dex.js'))
     }
 }

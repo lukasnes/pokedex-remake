@@ -16,12 +16,14 @@ html {
     /* ---------------Values--------------- */
     --header-height: 5rem;
     --sidebar-width: 5rem;
-    --sidebar-open-width: 15rem;
+    --sidebar-open-width: 20rem;
 }
 
 /* ----------------Header------------------ */
 header {
     position: fixed;
+    top: 0;
+    z-index: 1;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -39,6 +41,9 @@ header {
     align-items: center;
     border: none;
     background-color: var(--white);
+}
+.sandwich-btn:hover{
+    cursor: pointer;
 }
 .wich-one, .wich-two, .wich-three{
     width: 80%;
@@ -82,18 +87,23 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    transition: 0.4s;
+}
+#sidebar.open{
+    width: var(--sidebar-open-width);
 }
 /* --Sidebar-nav--*/
 .sidebar-nav{
     display: flex;
     align-items: center;
-
 }
 .sidebar-links{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    width: 75px;
 }
 .sidebar-links:hover{
     cursor: pointer;
@@ -105,13 +115,24 @@ header {
     width: 50px;
     height: 10px;
     background-color: var(--black);
-    transition: 0.4s;
+    transition: 0.7s;
+}
+#sidebar.open .link-underline{
+    width: 75px;
 }
 #home-nav:hover #home-underline{
     background-color: var(--red);
 }
+#home-nav:hover #home-span{
+    color: var(--red);
+    transition: 0.4s;
+}
 #dex-nav:hover #dex-underline{
     background-color: var(--orange);
+}
+#dex-nav:hover #dex-span{
+    color: var(--orange);
+    transition: 0.4s;
 }
 #home-span.active{
     color: var(--red)
@@ -134,6 +155,10 @@ header {
     background-color: var(--black);
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
+    transition: 1s;
+}
+#sidebar.open .link-underline::before{
+    left: 0;
 }
 .link-underline::after{
     position: absolute;
@@ -144,9 +169,37 @@ header {
     background-color: var(--black);
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
+    transition: 1s;
+}
+#sidebar.open .link-underline::after{
+    left: 85px;
 }
 .description-box{
     display: none;
+    height: 55px;
+    overflow-y: hidden;
+    opacity: 0;
+    padding: 10px;
+    margin: 3px;
+}
+#home-description-box{
+    border: 1px var(--red) solid;
+    border-radius: 25px;
+    background: radial-gradient(var(--white) 50%,var(--red) 90%);
+    font-weight: 600;
+}
+#dex-description-box{
+    border: 1px var(--red) solid;
+    border-radius: 25px;
+    background: radial-gradient(var(--white) 50%,var(--orange) 90%);
+    font-weight: 600;
+}
+.description-box.open{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: 0.4s;
 }
 
 /* -------------------Main-------------------- */
@@ -156,4 +209,35 @@ section{
     left: var(--sidebar-width);
     width: calc(100vw - var(--sidebar-width));
     min-height: calc(100vh - var(--header-height));
+    transition: 0.4s;
+}
+section.open{
+    left: var(--sidebar-open-width);
+}
+/* --Home-- */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+.home-title-box {
+    background-color: var(--black);
+    width: 100%;
+    text-align: center;
+}
+.home-title{
+    color: var(--white);
+    font-size: xx-large;
+    font-weight: 500;
+}
+.video{
+    padding: 50px;
+    border: 1px var(--red) solid;
+    border-radius: 25px;
+    background: radial-gradient(var(--white) 50%,var(--red) 90%);
+    scale: 1.5;
+}
+.poke-intro{
+    border-radius: 25px;
 }
