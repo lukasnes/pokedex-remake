@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/pokeball.ico">
+    <link rel="icon" href="./images/icons/pokeball.ico">
     <link rel="stylesheet" href="/reset">
     <link rel="stylesheet" href="/css">
     <title>Pokedex</title>
@@ -16,17 +16,52 @@
             <div class="wich-two"></div>
             <div class="wich-three"></div>
         </button>
-        <img src="./images/poke_logo.png" alt="Pokemon Logo">
+        <img src="./images/logos/poke_logo.png" alt="Pokemon Logo">
         <nav id="header-nav">
-            <a id="home-link">
+            <a class="header-links home-link">
                 Home
             </a>
-            <a id="dex-link">
+            <a class="header-links dex-link">
                 Pokedex
             </a>
         </nav>
     </header>
-    
+    <main>
+        <aside id="sidebar">
+            <nav id="home-nav" class="sidebar-nav">
+                <a class="sidebar-links home-link">
+                    <div class="icon-box">
+                        <img src="./images/icons/home.png" alt="Home Icon">
+                    </div>
+                    <span id="home-span" class="link-span">Home</span>
+                    <div id="home-underline" class="link-underline"></div>
+                </a>
+                <div id="home-description-box" class="description-box">
+                    <p id="home-description" class="description">
+                        This link will bring you back to the home page!
+                    </p>
+                </div>
+            </nav>
+            <nav id="dex-nav" class="sidebar-nav">
+                <a class="sidebar-links dex-link">
+                    <div class="icon-box">
+                        <img src="./images/icons/dex.png" alt="Dex Icon">
+                    </div>
+                    <span id="dex-span" class="link-span">Pokedex</span>
+                    <div id="dex-underline" class="link-underline"></div>
+                </a>
+                <div id="dex-description-box" class="description-box">
+                    <p id="dex-description" class="description">
+                        This link will bring you to the Pokedex! Search for any Pokemon, and add them to your team!
+                    </p>
+                </div>
+            </nav>
+        </aside>
+
+        <section>
+            
+        </section>
+    </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js"></script>

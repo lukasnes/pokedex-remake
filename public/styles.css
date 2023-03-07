@@ -1,5 +1,5 @@
 html {
-    background-image: url('./images/pokemon_bg.png');
+    background-image: url('./images/bg/pokemon_bg.png');
 }
 
 :root {
@@ -27,6 +27,7 @@ header {
     height: var(--header-height);
     background-color: var(--white);
 }
+/* --Sidebar Button-- */
 .sandwich-btn {
     width: var(--header-height);
     height: var(--header-height);
@@ -53,4 +54,90 @@ header {
 .open .wich-three{
     -webkit-transform: rotate(45deg) translate(-15px,-17px);
     transform: rotate(45deg) translate(-15px,-17px);
+}
+/* --Header nav-- */
+#header-nav{
+    padding-right: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.header-links{
+    text-decoration: underline;
+    font-weight: 600;
+}
+.header-links:hover{
+    cursor: pointer;
+}
+/* --------------Sidebar--------------- */
+#sidebar{
+    width: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    background-color: var(--white);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* --Sidebar-nav--*/
+.sidebar-nav{
+    display: flex;
+    align-items: center;
+
+}
+.sidebar-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar-links:hover{
+    cursor: pointer;
+}
+.link-span{
+    font-weight: 600;
+}
+.link-underline{
+    width: 50px;
+    height: 10px;
+    background-color: var(--black);
+    transition: 0.4s;
+}
+#home-nav:hover #home-underline{
+    background-color: var(--red);
+}
+#dex-nav:hover #dex-underline{
+    background-color: var(--orange);
+}
+.link-underline::before{
+    position: absolute;
+    left: 10px;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--black);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.link-underline::after{
+    position: absolute;
+    left: 60px;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--black);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.description-box{
+    display: none;
+}
+
+/* -------------------Main-------------------- */
+section{
+    position: absolute;
+    top: var(--header-height);
+    left: var(--sidebar-width);
+    width: calc(100vw - var(--sidebar-width));
+    min-height: calc(100vh - var(--header-height));
 }
