@@ -21,6 +21,8 @@ html {
 
 /* ----------------Header------------------ */
 header {
+    position: fixed;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,6 +73,8 @@ header {
 }
 /* --------------Sidebar--------------- */
 #sidebar{
+    position: fixed;
+    top: var(--header-height);
     width: var(--header-height);
     height: calc(100vh - var(--header-height));
     background-color: var(--white);
@@ -107,6 +111,18 @@ header {
     background-color: var(--red);
 }
 #dex-nav:hover #dex-underline{
+    background-color: var(--orange);
+}
+#home-span.active{
+    color: var(--red)
+}
+#dex-span.active{
+    color: var(--orange)
+}
+#home-underline.active{
+    background-color: var(--red);
+}
+#dex-underline.active{
     background-color: var(--orange);
 }
 .link-underline::before{
